@@ -247,7 +247,7 @@ async def download_media(payload: DownloadRequest, x_api_key: str = Header(None)
     if COOKIES_FILE and os.path.exists(COOKIES_FILE):
         base_opts["cookiefile"] = COOKIES_FILE
 
-    # yt-dlp ke liye:
+    # yt-dlp :
     # audio request -> bestaudio
     # video request -> 720p tak video
     if payload.type == "audio":
@@ -313,7 +313,7 @@ async def download_media(payload: DownloadRequest, x_api_key: str = Header(None)
     ins = await cache_col.insert_one(doc)
     doc_id = ins.inserted_id
 
-    # -------- BACKGROUND AUDIO CACHE (sirf audio & size <= limit) -------- #
+    # -------- BACKGROUND AUDIO CACHE ( audio & size <= limit) -------- #
 
     if payload.type == "audio":
         if size_mb <= AUDIO_TG_UPLOAD_LIMIT_MB:
@@ -324,8 +324,6 @@ async def download_media(payload: DownloadRequest, x_api_key: str = Header(None)
             )
         else:
             print(f"[CACHE] Skipping TG upload (audio too large: {size_mb:.2f} MB)")
-
-    # video ke liye cache_to_telegram nahi, sirf serve
 
     return {
         "status": "success",
