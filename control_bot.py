@@ -12,7 +12,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 MONGO_DB_URI = os.getenv("MONGO_DB_URI")
 DOWNLOAD_DIR = os.getenv("DOWNLOAD_DIR", "downloads")
 
-OWNER_ID = int(os.getenv("API_OWNER_ID", "8302512047"))  # tumhara owner id
+OWNER_ID = int(os.getenv("API_OWNER_ID", "8302512047")) 
 
 # Mongo
 mongo_client = AsyncIOMotorClient(MONGO_DB_URI)
