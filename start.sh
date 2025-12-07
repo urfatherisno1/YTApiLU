@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# AbhiXApi root me aa jao
 cd "$(dirname "$0")"
 
 echo "[AbhiXApi] Loading environment from .env..."
@@ -26,6 +25,4 @@ echo "[AbhiXApi] Sab kuch start ho chuka hai ✅"
 echo "[AbhiXApi] Logs isi terminal me dikhenge (API + Control Bot mixed)."
 echo "[AbhiXApi] Band karne ke liye sirf CTRL + C daba dena."
 echo ""
-
-# Dono processes ka wait – jab tak tu CTRL+C nahi marega, ye terminal busy rahega
 wait
